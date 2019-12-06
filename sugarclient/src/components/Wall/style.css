@@ -1,0 +1,8 @@
+.board {
+    height: 600px;
+    border-radius: 6px;
+}
+
+.ore {
+    padding: 10px;
+}
