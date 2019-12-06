@@ -18,8 +18,9 @@ class App extends React.Component {
         this.state = {
             name: "<facePalm/>",
             whatever: null
-        }
+        };
     };
+
     render() {
         return (
             <Wrapper>
@@ -30,6 +31,7 @@ class App extends React.Component {
                 </div>
                 <Router>
                     <Nav />
+                    <br />
                     <Switch>
                         <Route path="/" exact component={Home} />
                         {/* <Route path="/about" exact component={about} /> */}

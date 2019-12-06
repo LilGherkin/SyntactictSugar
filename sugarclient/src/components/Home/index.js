@@ -1,5 +1,6 @@
 import React from 'react';
-import Action from "../Action"
+import Action from "../Action";
+import Wall from "../Wall";
 import {
     BrowserRouter as Router,
     Switch,
@@ -16,8 +17,15 @@ class Home extends React.Component {
     };
     render() {
         return (
-            <div className="row">
-                <Action />
+            <div className="container">
+                <div className="row">
+                    <div className="col m8">
+                        <Wall />
+                    </div>
+                </div>
+                <div className="row">
+                    <Action />
+                </div>
             </div>
         )
     }
