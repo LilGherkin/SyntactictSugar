@@ -20,7 +20,7 @@ function Wall(props) {
                 <button class="btn waves-effect waves-light blue" type="submit" name="action">post</button>
             </div>
             <div className="board z-depth-2">
-                {/* <ul class="collection">
+                <ul class="collection">
                     <li class="collection-item avatar">
                         <img src="images/yuna.jpg" alt="" class="circle" />
                         <span class="title">Title</span>
@@ -28,7 +28,63 @@ function Wall(props) {
                         Second Line</p>
                         <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
                     </li>
-                </ul> */}
+                    <li class="collection-item avatar">
+                        <img src="images/yuna.jpg" alt="" class="circle" />
+                        <span class="title">Title</span>
+                        <p>First Line
+                        Second Line</p>
+                        <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+                    </li>
+                    <li class="collection-item avatar">
+                        <img src="images/yuna.jpg" alt="" class="circle" />
+                        <span class="title">Title</span>
+                        <p>First Line
+                        Second Line</p>
+                        <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+                    </li>
+                    <li class="collection-item avatar">
+                        <img src="images/yuna.jpg" alt="" class="circle" />
+                        <span class="title">Title</span>
+                        <p>First Line
+                        Second Line</p>
+                        <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+                    </li>
+                    <li class="collection-item avatar">
+                        <img src="images/yuna.jpg" alt="" class="circle" />
+                        <span class="title">Title</span>
+                        <p>First Line
+                        Second Line</p>
+                        <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+                    </li>
+                    <li class="collection-item avatar">
+                        <img src="images/yuna.jpg" alt="" class="circle" />
+                        <span class="title">Title</span>
+                        <p>First Line
+                        Second Line</p>
+                        <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+                    </li>
+                    <li class="collection-item avatar">
+                        <img src="images/yuna.jpg" alt="" class="circle" />
+                        <span class="title">Title</span>
+                        <p>First Line
+                        Second Line</p>
+                        <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+                    </li>
+                    <li class="collection-item avatar">
+                        <img src="images/yuna.jpg" alt="" class="circle" />
+                        <span class="title">Title</span>
+                        <p>First Line
+                        Second Line</p>
+                        <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+                    </li>
+                    <li class="collection-item avatar">
+                        <img src="images/yuna.jpg" alt="" class="circle" />
+                        <span class="title">Title</span>
+                        <p>First Line
+                        Second Line</p>
+                        <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+                    </li>
+                </ul>
             </div>
         </>
     )
