@@ -9,7 +9,7 @@ import {
 
 function Nav(props) {
     return (
-        <>
+        <div className="row">
             <ul id="dropdown2" className="dropdown-content">
                 <li><Link to="/">about</Link></li>
                 <li><a href="#">tools</a></li>
@@ -20,7 +20,7 @@ function Nav(props) {
                     class="medium material-icons">menu</i>
                 </a>
             </div>
-        </>
+        </div>
     )
 }
 
