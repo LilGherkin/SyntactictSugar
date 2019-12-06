@@ -7,9 +7,9 @@ import {
     Link
 } from "react-router-dom";
 
-function Footer(props) {
+function Footer() {
     return (
-        <div className="grey page-footer">
+        <footer className="grey page-footer">
             <div className="container">
                 <div className="row center">
                     <p>sytactictsugar</p>
@@ -22,7 +22,7 @@ function Footer(props) {
                     </div>
                 </div>
             </div>
-        </div>
+        </footer>
     )
 }
 

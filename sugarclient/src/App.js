@@ -16,6 +16,7 @@ class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            name: "<facePalm/>",
             whatever: null
         }
     };
@@ -24,15 +25,16 @@ class App extends React.Component {
             <Wrapper>
                 <div className="container">
                     <div className="row">
-                        <h1 className="header left black-text">facePalm</h1>
+                        <h1 className="header left black-text">{this.state.name}</h1>
                     </div>
-                    <Router>
-                        <Nav />
-                        <Switch>
-                            <Route path="/" exact component={Home} />
-                        </Switch>
-                    </Router>
                 </div>
+                <Router>
+                    <Nav />
+                    <Switch>
+                        <Route path="/" exact component={Home} />
+                        {/* <Route path="/about" exact component={about} /> */}
+                    </Switch>
+                </Router>
                 <Footer />
             </Wrapper>
         );
