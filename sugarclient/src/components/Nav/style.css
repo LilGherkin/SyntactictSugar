@@ -5,6 +5,7 @@
     z-index: 9;
     border-top: 8px solid blueviolet;
     transition: .2s;
+    background-color: lightblue;
 }
 
 .scene {
@@ -41,15 +42,15 @@
     transform: rotateY(0deg);
     padding-top: 25px;
     transition: .2s;
-    background-color: rgb(153, 139, 238);
+    background-color: lightblue;
 }
 
 .right {
     transform: rotateY(90deg);
     left: 100%;
-    background-color: rgb(168, 162, 255);
-    color: black;
-    padding-top: 30px;
+    background-color: #03a9f4;
+    color: rgb(167, 216, 247);
+    padding-top: 25px;
     transition: .2s;
 }
 
