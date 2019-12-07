@@ -41,14 +41,14 @@
     transform: rotateY(0deg);
     padding-top: 25px;
     transition: .2s;
-    background-color: rgb(153, 139, 238);
+    background-color: lightblue;
 }
 
 .right {
     transform: rotateY(90deg);
     left: 100%;
-    background-color: rgb(168, 162, 255);
-    color: black;
+    background-color: #03a9f4;
+    color: lightgrey;
     padding-top: 30px;
     transition: .2s;
 }

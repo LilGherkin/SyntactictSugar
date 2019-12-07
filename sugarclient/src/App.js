@@ -12,23 +12,23 @@ import {
     Link
 } from "react-router-dom";
 
+
 class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            name: ["<facePalm/>", "{{{facePalm}}}", "facePalm();", "(facePalm)=>{}", ".facePalm{}"],
+            name: "<facePalm/>",
+            //name: ["<facePalm/>", "{{{facePalm}}}", "facePalm();", "(facePalm)=>{}", ".facePalm{}"],
             whatever: null
         };
     };
-
-     
-
     render() {
         
         return (
             <Wrapper>
                 <div className="container">
                     <div className="row">
+                        //<h1 className="header left black-text">{this.state.name}</h1>
                         <h1 className="header left black-text">{this.state.name[0]}</h1>
                     </div>
                 </div>
@@ -46,5 +46,7 @@ class App extends React.Component {
         );
     };
 };
+
+
 
 export default App;
