@@ -16,6 +16,10 @@ function Projects(props) {
                 </div>
                 <table className="striped">
                     <tbody>
+                        {/* <tr>
+                            <td><img src={props.userimage} /></td>
+                            <td>{props.userproj}</td>
+                        </tr> */}
                         <tr>
                             <td>Alvin</td>
                             <td>Eclair</td>

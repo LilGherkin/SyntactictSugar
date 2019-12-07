@@ -46,13 +46,13 @@ function Nav(props) {
                         </div>
                         <a href="/music">
                             <div className="right face center-align">
-                                <p>music</p>
+                                <p>projects</p>
                             </div>
                         </a>
                     </div>
                 </div>
 
-                <div className="scene">
+                {/* <div className="scene">
                     <div className="box">
                         <div className="front face center-align" id="org">
                             <img className="plane" src="assets/img/port.png" />
@@ -90,10 +90,10 @@ function Nav(props) {
                             <p>other</p>
                         </div>
                     </div>
-                </div>
+                </div> */}
                 <div className="fill"></div>
             </div>
-            <div className="row">
+            {/* <div className="row">
                 <ul id="dropdown2" className="dropdown-content">
                     <li><Link to="/">about</Link></li>
                     <li><a href="#">tools</a></li>
@@ -104,7 +104,7 @@ function Nav(props) {
                         className="medium material-icons">menu</i>
                     </a>
                 </div>
-            </div>
+            </div> */}
         </>
     )
 }

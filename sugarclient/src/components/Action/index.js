@@ -10,19 +10,19 @@ import {
 function Action(props) {
     return (
         <>
-            <h4 className="center">Stuff</h4>
-            <div className="col s12 m6 l3">
+            <h4 className="center">get involved</h4>
+            {/* <div className="col s12 m6 l3">
                 <div className="center promo promo-example">
                     <i className="large material-icons">things</i>
                     <h5 className="promo-caption">
                         <a href="#" target="_blank">Link</a>
                     </h5>
                 </div>
-            </div>
+            </div> */}
             <div className="col s12 m6 l3">
                 <div className="center promo promo-example">
                     <i className="large material-icons">link</i>
-                    <h5 className="promo-caption">link</h5>
+                    <h5 className="promo-caption">projects</h5>
                     <p className="light center"></p>
                 </div>
             </div>
@@ -32,13 +32,13 @@ function Action(props) {
                     <h5 className="promo-caption"><a href="#" target="_blank">link</a></h5>
                 </div>
             </div>
-            <div className="col s12 m6 l3">
+            {/* <div className="col s12 m6 l3">
                 <div className="center promo promo-example">
                     <i className=" large material-icons">stuff</i>
                     <h5 className="promo-caption"><a href="#" target="_blank">link</a></h5>
                     <p className="light center"></p>
                 </div>
-            </div>
+            </div> */}
         </>
     )
 }
