@@ -8,10 +8,36 @@ import {
     Link
 } from "react-router-dom";
 
-function Nav(props) {
+// Auth0 start
+import { useAuth0 } from "../../react-auth0-spa";
+import Loading from "../../components/Loading";
+
+
+
+// Auth0 end
+
+
+    const Nav = () => {
+
+        const { isAuthenticated, loginWithRedirect, logout } = useAuth0();
+        const { loading } = useAuth0();
+
+  if (loading) {
+    return <Loading />;
+  }
+
     return (
         <>
+         <div className="box center-align">
+                       
+
+                       {!isAuthenticated && (<button onClick={() => loginWithRedirect({})}>Login</button>)}
+
+                       {isAuthenticated && (<button onClick={() => logout()}>Logout</button>)}
+
+                   </div>
             <div className="boxinternal z-depth-3">
+
                 <div className="scene">
                     <div className="box center-align">
                         <div className="front face center-align" id="org">
