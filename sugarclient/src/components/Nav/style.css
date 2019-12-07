@@ -1,7 +1,7 @@
 .boxinternal {
     height: 108px;
     width: 100%;
-    position: fixed;
+    /* position: fixed; */
     z-index: 9;
     border-top: 8px solid blueviolet;
     transition: .2s;
@@ -41,14 +41,14 @@
     transform: rotateY(0deg);
     padding-top: 25px;
     transition: .2s;
-    background-color: lightblue;
+    background-color: rgb(153, 139, 238);
 }
 
 .right {
     transform: rotateY(90deg);
     left: 100%;
-    background-color: blue;
-    color: lightgrey;
+    background-color: rgb(168, 162, 255);
+    color: black;
     padding-top: 30px;
     transition: .2s;
 }
