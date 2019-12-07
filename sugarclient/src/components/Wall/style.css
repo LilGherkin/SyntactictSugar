@@ -1,0 +1,25 @@
+.board {
+    height: 600px;
+    border-radius: 6px;
+    overflow: scroll;
+}
+    
+    /* Scrollbar styles */
+::-webkit-scrollbar {
+    width: 18px;
+    height: 0px;
+}
+    
+::-webkit-scrollbar-track {
+    border: 1px solid rgb(225, 239, 255);
+    border-radius: 6px;
+}
+    
+::-webkit-scrollbar-thumb {
+    background: rgb(157, 221, 221);  
+    border-radius: 6px;
+}
+    
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(117, 210, 241);  
+}
