@@ -21,10 +21,7 @@ class App extends React.Component {
         };
     };
 
-     
-
     render() {
-        
         return (
             <Wrapper>
                 <div className="container">
