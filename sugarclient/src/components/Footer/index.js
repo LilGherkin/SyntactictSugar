@@ -1,5 +1,6 @@
 import React from "react";
-// import "./style.css";
+import "./style.css";
+
 import {
     BrowserRouter as Router,
     Switch,
@@ -7,9 +8,7 @@ import {
     Link
 } from "react-router-dom";
 
-
-
-function Footer(props) {
+function Footer() {
     return (
         <footer className="grey page-footer">
             <div className="container">
