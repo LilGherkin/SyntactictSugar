@@ -1,6 +1,9 @@
 .boxinternal {
-    position: fixed;
+    height: 108px;
+    width: 100%;
+    /* position: fixed; */
     z-index: 9;
+    border-top: 8px solid blueviolet;
     transition: .2s;
 }
 

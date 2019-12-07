@@ -1,4 +1,11 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This sample demonstrates:
+
+- Logging in to Auth0 using Redirect Mode
+- Accessing profile information that has been provided in the ID token
+- Gated content. The `/profile` route is not accessible without having first logged in
+
+
 
 ## Available Scripts
 
