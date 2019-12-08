@@ -3,8 +3,9 @@
     width: 100%;
     /* position: fixed; */
     z-index: 9;
-    border-top: 8px solid blueviolet;
+    border-top: 8px solid #03a9f4;
     transition: .2s;
+    background-color: lightblue;
 }
 
 .scene {
@@ -48,8 +49,8 @@
     transform: rotateY(90deg);
     left: 100%;
     background-color: #03a9f4;
-    color: lightgrey;
-    padding-top: 30px;
+    color: rgb(167, 216, 247);
+    padding-top: 25px;
     transition: .2s;
 }
 
