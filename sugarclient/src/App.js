@@ -24,9 +24,10 @@ class App extends React.Component {
     render() {
         return (
             <Wrapper>
+                <div className="cover"></div>
                 <div className="container">
                     <div className="row">
-                        <h1 className="header left black-text">{this.state.name[0]}</h1>
+                        <h1 className="header left white-text b">{this.state.name[0]}</h1>
                     </div>
                 </div>
                 <Router>

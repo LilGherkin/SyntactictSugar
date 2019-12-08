@@ -3,7 +3,7 @@
     width: 100%;
     /* position: fixed; */
     z-index: 9;
-    border-top: 8px solid blueviolet;
+    border-top: 8px solid #03a9f4;
     transition: .2s;
     background-color: lightblue;
 }

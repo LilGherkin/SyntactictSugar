@@ -23,7 +23,7 @@ const Nav = () => {
                 {!isAuthenticated && (<button onClick={() => loginWithRedirect({})}>Login</button>)}
                 {isAuthenticated && (<button onClick={() => logout()}>Logout</button>)}
             </div> */}
-            <div className="boxinternal z-depth-3">
+            <div className="boxinternal">
                 <div className="center-align">
                     <div className="scene">
                         <div className="box center-align">
@@ -49,14 +49,13 @@ const Nav = () => {
                             </div>
                         </div>
                     </div>
-
                     <div className="scene">
                         <div className="box center-align" href="#modal1">
                             <div className="front face center-align" id="org">
                                 <img className="plane" src="/img/#" />
                                 <i className="fas fa-home"></i>
                             </div>
-                            <Link to="/login">
+                            <Link to="/">
                                 {!isAuthenticated && (<div className="right face" onClick={() => loginWithRedirect({})}>
                                     <p>LOGIN</p>
                                 </div>)}
