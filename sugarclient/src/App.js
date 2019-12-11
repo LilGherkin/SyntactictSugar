@@ -1,9 +1,9 @@
 import React from 'react';
 import Wrapper from "./components/Wrapper";
 import Nav from "./components/Nav";
-// import Action from "./components/Action";
 import Footer from "./components/Footer";
 import Home from "./components/Home";
+import Code from "./components/Code";
 import './App.css';
 import {
     BrowserRouter as Router,
@@ -40,7 +40,7 @@ class App extends React.Component {
                     <br /><br /><br />
                     <Switch>
                         <Route path="/" exact component={Home} />
-                        {/* <Route path="/about" exact component={about} /> */}
+                        <Route path="/code" exact component={Code} />
                     </Switch>
                 </Router>
                 <br />

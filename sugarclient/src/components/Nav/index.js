@@ -52,7 +52,7 @@ const Nav = () => {
                     <div className="scene">
                         <div className="box center-align" href="#modal1">
                             <div className="front face center-align" id="org">
-                                <img className="plane" src="/img/#" />
+                                <img className="plane" src="/img/login.png" />
                                 <i className="fas fa-home"></i>
                             </div>
                             <Link to="/">
