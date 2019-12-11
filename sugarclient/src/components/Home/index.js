@@ -33,11 +33,7 @@ class Home extends React.Component {
             <div className="container">
                 <div className="row">
                     <div className="col s12 m3">
-                        <Projects
-                        //     {this.state.projects.map(proj) => {
-
-                        // }}
-                        />
+                        <Projects title={"coolProjects"} />
                     </div>
                     <div className="col s12 m9">
                         <Wall

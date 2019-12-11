@@ -11,7 +11,7 @@ class Code extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            yeet: null
+            name: null
         };
     };
     render() {
@@ -19,7 +19,7 @@ class Code extends React.Component {
             <div className="container">
                 <div className="row">
                     <div className="col s12 m3">
-                        <Projects />
+                        <Projects title={this.state.name + "Projects"} />
                     </div>
                     <code>
                         code ands stuff
