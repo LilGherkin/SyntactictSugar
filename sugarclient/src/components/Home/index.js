@@ -15,18 +15,21 @@ class Home extends React.Component {
         super(props);
         this.state = {
             projects: {},
-            postText: ""
+            postText: "",
+            button: ["btn disabled", "btn waves-effect waves-light blue"],
+            btnState: 0
         };
     };
 
     input = (text) => {
         this.setState({ postText: text });
+        text !== "" ? this.setState({ btnState: 1 }) : this.setState({ btnState: 0 });
     };
 
     postpost = () => {
-        this.state.postText !== "" ? console.log(this.state.postText) : console.log("no");
+        this.state.postText !== "" ? console.log(this.state.postText) : console.log("NOTHING");
         // axios.post("/post", postText);
-    }
+    };
 
     render() {
         return (
@@ -39,7 +42,7 @@ class Home extends React.Component {
                         <Wall
                             postpost={this.postpost}
                             postContent={this.input}
-                        >
+                            buttonClass={this.state.button[this.state.btnState]}>
                             <Userpost />
                         </Wall>
                     </div>
