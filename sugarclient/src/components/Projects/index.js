@@ -12,7 +12,7 @@ function Projects(props) {
         <>
             <div className="title">
                 <div className="center">
-                    <p>coolProjects</p>
+                    <p>{props.title}</p>
                 </div>
                 <table className="striped">
                     <tbody>

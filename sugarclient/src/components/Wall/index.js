@@ -13,7 +13,7 @@ function Wall(props) {
             <div className="row center">
                 <div className="textpost">
                     <div className="input-field">
-                        <textarea id="textarea1" className="materialize-textarea" onKeyPress={(event) => props.postContent(event.target.value)}></textarea>
+                        <textarea id="textarea1" className="materialize-textarea" onChange={(event) => props.postContent(event.target.value)}></textarea>
                         <label for="textarea1">writeHere</label>
                     </div>
                 </div>

@@ -2,6 +2,7 @@ import React from 'react';
 import Action from "../Action";
 import Wall from "../Wall";
 import Projects from "../Projects";
+import Userpost from "../Userpost";
 import {
     BrowserRouter as Router,
     Switch,
@@ -23,7 +24,7 @@ class Home extends React.Component {
     };
 
     postpost = () => {
-        this.state.postText !== "" ? console.log(this.state.postText) : console.log("no")
+        this.state.postText !== "" ? console.log(this.state.postText) : console.log("no");
         // axios.post("/post", postText);
     }
 
@@ -32,17 +33,15 @@ class Home extends React.Component {
             <div className="container">
                 <div className="row">
                     <div className="col s12 m3">
-                        <Projects
-                        //     {this.state.projects.map(proj) => {
-
-                        // }}
-                        />
+                        <Projects title={"coolProjects"} />
                     </div>
                     <div className="col s12 m9">
                         <Wall
                             postpost={this.postpost}
                             postContent={this.input}
-                        />
+                        >
+                            <Userpost />
+                        </Wall>
                     </div>
                 </div>
                 <br />
