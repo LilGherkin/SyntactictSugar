@@ -17,17 +17,22 @@ class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            name: ["<facePalm/>", "{{{facePalm}}}", "facePalm();", "(facePalm)=>{}", ".facePalm{}"],
-            whatever: null
+            plates: ["<facePalm/>", "{{{facePalm}}}", "facePalm();", "(facePalm)=>{}", ".facePalm{}", "./facePalm"],
+            name: 0
         };
     };
+
+    componentDidMount = () => {
+        this.setState({ name: Math.floor(Math.random() * Math.floor(this.state.plates.length)) });
+    }
+
     render() {
         return (
             <Wrapper>
                 <div className="cover"></div>
                 <div className="container">
                     <div className="row">
-                        <h1 className="header left white-text b">{this.state.name[0]}</h1>
+                        <h1 className="header left black-text b">{this.state.plates[this.state.name]}</h1>
                     </div>
                 </div>
                 <Router>

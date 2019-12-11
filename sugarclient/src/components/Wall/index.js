@@ -12,78 +12,16 @@ function Wall(props) {
         <>
             <div className="row center">
                 <div className="textpost">
-                    <div class="input-field">
-                        <textarea id="textarea1" class="materialize-textarea"></textarea>
+                    <div className="input-field">
+                        <textarea id="textarea1" className="materialize-textarea" onKeyPress={(event) => props.postContent(event.target.value)}></textarea>
                         <label for="textarea1">writeHere</label>
                     </div>
                 </div>
-                <button class="btn waves-effect waves-light blue" type="submit" name="action">post</button>
+                <button className="btn waves-effect waves-light blue" type="submit" name="action" onClick={props.postpost}>send it</button>
             </div>
             <div className="board z-depth-2">
-                <ul class="collection">
-                    <li class="collection-item avatar">
-                        <img src="images/yuna.jpg" alt="" class="circle" />
-                        <span class="title">Title</span>
-                        <p>First Line
-                        Second Line</p>
-                        <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-                    </li>
-                    <li class="collection-item avatar">
-                        <img src="images/yuna.jpg" alt="" class="circle" />
-                        <span class="title">Title</span>
-                        <p>First Line
-                        Second Line</p>
-                        <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-                    </li>
-                    <li class="collection-item avatar">
-                        <img src="images/yuna.jpg" alt="" class="circle" />
-                        <span class="title">Title</span>
-                        <p>First Line
-                        Second Line</p>
-                        <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-                    </li>
-                    <li class="collection-item avatar">
-                        <img src="images/yuna.jpg" alt="" class="circle" />
-                        <span class="title">Title</span>
-                        <p>First Line
-                        Second Line</p>
-                        <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-                    </li>
-                    <li class="collection-item avatar">
-                        <img src="images/yuna.jpg" alt="" class="circle" />
-                        <span class="title">Title</span>
-                        <p>First Line
-                        Second Line</p>
-                        <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-                    </li>
-                    <li class="collection-item avatar">
-                        <img src="images/yuna.jpg" alt="" class="circle" />
-                        <span class="title">Title</span>
-                        <p>First Line
-                        Second Line</p>
-                        <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-                    </li>
-                    <li class="collection-item avatar">
-                        <img src="images/yuna.jpg" alt="" class="circle" />
-                        <span class="title">Title</span>
-                        <p>First Line
-                        Second Line</p>
-                        <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-                    </li>
-                    <li class="collection-item avatar">
-                        <img src="images/yuna.jpg" alt="" class="circle" />
-                        <span class="title">Title</span>
-                        <p>First Line
-                        Second Line</p>
-                        <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-                    </li>
-                    <li class="collection-item avatar">
-                        <img src="images/yuna.jpg" alt="" class="circle" />
-                        <span class="title">Title</span>
-                        <p>First Line
-                        Second Line</p>
-                        <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-                    </li>
+                <ul className="collection">
+                    {props.children}
                 </ul>
             </div>
         </>

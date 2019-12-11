@@ -13,9 +13,20 @@ class Home extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            projects: {}
+            projects: {},
+            postText: ""
         };
     };
+
+    input = (text) => {
+        this.setState({ postText: text });
+    };
+
+    postpost = () => {
+        this.state.postText !== "" ? console.log(this.state.postText) : console.log("no")
+        // axios.post("/post", postText);
+    }
+
     render() {
         return (
             <div className="container">
@@ -28,7 +39,10 @@ class Home extends React.Component {
                         />
                     </div>
                     <div className="col s12 m9">
-                        <Wall />
+                        <Wall
+                            postpost={this.postpost}
+                            postContent={this.input}
+                        />
                     </div>
                 </div>
                 <br />
