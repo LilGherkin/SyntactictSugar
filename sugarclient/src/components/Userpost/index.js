@@ -5,8 +5,8 @@ function Userpost(props) {
         <>
             <li className="collection-item avatar">
                 <img src="?" alt="" className="circle" />
-                <span className="title">Title</span>
-                <p>First Line</p>
+                <span className="title">UserName</span>
+                <p>text</p>
                 <a href="#!" className="secondary-content"><i className="material-icons">grade</i></a>
             </li>
         </>
