@@ -11,7 +11,7 @@ function Action(props) {
     return (
         <>
             <h4 className="center">Stuff</h4>
-            <div className="col l3">
+            <div className="col s12 m6 l3">
                 <div className="center promo promo-example">
                     <i className="large material-icons">things</i>
                     <h5 className="promo-caption">
@@ -28,7 +28,7 @@ function Action(props) {
             </div>
             <div className="col s12 m6 l3">
                 <div className="center promo promo-example">
-                    <i className=" large material-icons">work</i>
+                    <i className="large material-icons">work</i>
                     <h5 className="promo-caption"><a href="#" target="blank">link</a></h5>
                 </div>
             </div>
