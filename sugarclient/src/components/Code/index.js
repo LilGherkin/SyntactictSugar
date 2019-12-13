@@ -14,6 +14,7 @@ class Code extends React.Component {
             name: null
         };
     };
+
     render() {
         return (
             <div className="container">

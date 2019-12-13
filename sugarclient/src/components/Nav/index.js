@@ -10,7 +10,6 @@ import {
     Link
 } from "react-router-dom";
 const Nav = () => {
-
     // Auth0 start
     const { isAuthenticated, loginWithRedirect, logout } = useAuth0();
     const { loading } = useAuth0();
@@ -67,73 +66,6 @@ const Nav = () => {
                     </div>
                 </div>
             </div>
-
-            {/* <div className="scene">
-                    <div className="box">
-                        <div className="front face center-align" id="org">
-                            <img className="plane" src="assets/img/banjo.png" />
-                            <i className="fas fa-home"></i>
-                        </div>
-                        <a href="/music">
-                            <div className="right face center-align">
-                                <p>projects</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <div className="scene">
-                    <div className="box">
-                        <div className="front face center-align" id="org">
-                            <img className="plane" src="assets/img/port.png" />
-                            <i className="fas fa-home"></i>
-                        </div>
-                        <a href="/portfolio">
-                            <div className="right face center-align">
-                                <p>portfolio</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <div className="scene">
-                    <div className="box">
-                        <div className="front face center-align" id="org">
-                            <img className="plane" src="assets/img/train.png" />
-                            <i className="fas fa-home"></i>
-                        </div>
-                        <a href="/travelogue">
-                            <div className="right face center-align">
-                                <p>travel</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <div className="scene">
-                    <div className="box">
-                        <div className="front face center-align" id="org">
-                            <img className="plane" src="assets/img/box.png" />
-                            <i className="fas fa-home"></i>
-                        </div>
-                        <div className="right face center-align">
-                            <p>other</p>
-                        </div>
-                    </div>
-                </div> */}
-            {/* <div className="fill"></div> */}
-            {/* <div className="row">
-                <ul id="dropdown2" className="dropdown-content">
-                    <li><Link to="/">about</Link></li>
-                    <li><a href="#">tools</a></li>
-                    <li><a href="#">things</a></li>
-                </ul>
-                <div className="col s12 m4">
-                    <a className="dropdown-button col s12" href="#!" data-activates="dropdown2"><i
-                        className="medium material-icons">menu</i>
-                    </a>
-                </div>
-            </div> */}
         </>
     )
 }
