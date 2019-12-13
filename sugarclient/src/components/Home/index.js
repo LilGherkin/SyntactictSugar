@@ -17,7 +17,7 @@ class Home extends React.Component {
             projects: {},
             postText: "",
             button: ["btn disabled", "btn waves-effect waves-light blue"],
-            btnState: 0
+            btnState: 0,
         };
     };
 
@@ -28,6 +28,7 @@ class Home extends React.Component {
 
     postpost = () => {
         this.state.postText !== "" ? console.log(this.state.postText) : console.log("NOTHING");
+        this.setState({ postText: "" });
         // axios.post("/post", postText);
     };
 
@@ -42,7 +43,9 @@ class Home extends React.Component {
                         <Wall
                             postpost={this.postpost}
                             postContent={this.input}
-                            buttonClass={this.state.button[this.state.btnState]}>
+                            buttonClass={this.state.button[this.state.btnState]}
+                        // gone={}
+                        >
                             <Userpost />
                         </Wall>
                     </div>

@@ -1,0 +1,26 @@
+{
+  "name": "syntactictsugar",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LilGherkin/SyntactictSugar.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LilGherkin/SyntactictSugar/issues"
+  },
+  "homepage": "https://github.com/LilGherkin/SyntactictSugar#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.8.1",
+    "morgan": "^1.9.1"
+  }
+}
