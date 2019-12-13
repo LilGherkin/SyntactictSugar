@@ -1,11 +1,5 @@
 import React from 'react';
 import Projects from "../Projects";
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link
-} from "react-router-dom";
 
 class Code extends React.Component {
     constructor(props) {
