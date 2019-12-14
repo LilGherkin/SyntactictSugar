@@ -6,7 +6,10 @@ function Footer() {
         <footer className="grey page-footer">
             <div className="container">
                 <div className="row center">
+                    <br />
                     <h6>© RBF productions</h6>
+                    <br />
+                    <br />
                 </div>
             </div>
             <div className="footer-copyright">
@@ -14,8 +17,6 @@ function Footer() {
                     <div className="row center">
                         <h6>Built with React, Node, Express, Mongoose, and MaterializeCSS</h6>
                     </div>
-                    <br />
-                    <br />
                 </div>
             </div>
         </footer>
