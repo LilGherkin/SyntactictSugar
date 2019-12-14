@@ -1,5 +1,5 @@
 .board {
-    height: 600px;
+    height: 800px;
     border-radius: 6px;
     overflow: scroll;
 }
@@ -23,5 +23,5 @@
 }
     
 ::-webkit-scrollbar-thumb:hover {
-    background: rgb(95, 183, 255);  
+    background: rgb(124, 192, 248);  
 }

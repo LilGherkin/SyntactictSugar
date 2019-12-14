@@ -43,9 +43,11 @@ const Nav = () => {
                                 <img className="plane" src="/img/circled-user.png" />
                                 <i className="fas fa-home"></i>
                             </div>
-                            <div className="right face center-align">
-                                <p>PROFILE</p>
-                            </div>
+                            <Link to="/code">
+                                <div className="right face center-align">
+                                    <p>PROFILE</p>
+                                </div>
+                            </Link>
                         </div>
                     </div>
                     <div className="scene">
