@@ -3,7 +3,7 @@ const db = require("../models");
 // Defining methods for the CommentController
 module.exports = {
   findAll: function(req, res) {
-    res.json({this: "works"});
+    res.json({this: "works234"});
   },
   create: function(req, res) {
     console.log(req.body)
