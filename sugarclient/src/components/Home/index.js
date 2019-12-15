@@ -3,6 +3,7 @@ import Action from "../Action";
 import Wall from "../Wall";
 import Projects from "../Projects";
 import Userpost from "../Userpost";
+
 import {
     BrowserRouter as Router,
     Switch,
@@ -36,7 +37,7 @@ class Home extends React.Component {
         return (
             <div className="container">
                 <div className="row">
-                    <div className="col s12 m3">
+                    <div className="col s12 l3">
                         <Projects title={"coolProjects"} />
                     </div>
                     <div className="col s12 m9">
