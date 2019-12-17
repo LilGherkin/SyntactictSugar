@@ -31,23 +31,25 @@ const Nav = () => {
                                 <i className="fas fa-home"></i>
                             </div>
                             <Link to="/">
-                                <div className="right face" href="/">
+                                <div className="circle right face" href="/">
                                     <p>HOME</p>
                                 </div>
                             </Link>
                         </div>
                     </div>
-                    <div className="scene">
+                    {isAuthenticated && (<div className="scene">
                         <div className="box modal-trigger" href="#modal1">
                             <div className="front face center-align" id="org">
                                 <img className="plane" src="/img/circled-user.png" />
                                 <i className="fas fa-home"></i>
                             </div>
-                            <div className="right face center-align">
-                                <p>PROFILE</p>
-                            </div>
+                            <Link to="/code">
+                                <div className="circle right face center-align">
+                                    <p>PROFILE</p>
+                                </div>
+                            </Link>
                         </div>
-                    </div>
+                    </div>)}
                     <div className="scene">
                         <div className="box center-align" href="#modal1">
                             <div className="front face center-align" id="org">
@@ -55,10 +57,10 @@ const Nav = () => {
                                 <i className="fas fa-home"></i>
                             </div>
                             <Link to="/">
-                                {!isAuthenticated && (<div className="right face" onClick={() => loginWithRedirect({})}>
+                                {!isAuthenticated && (<div className="circle right face" onClick={() => loginWithRedirect({})}>
                                     <p>LOGIN</p>
                                 </div>)}
-                                {isAuthenticated && (<div className="right face" onClick={() => logout()}>
+                                {isAuthenticated && (<div className="circle right face" onClick={() => logout()}>
                                     <p>LOGOUT</p>
                                 </div>)}
                             </Link>
