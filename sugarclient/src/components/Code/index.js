@@ -1,7 +1,6 @@
 import React from 'react';
 import Projects from "../Projects";
-// import axios from "axios";
-// import { useAuth0 } from "../react-auth0-spa";
+import "./style.css";
 
 class Code extends React.Component {
     constructor(props) {
@@ -26,11 +25,17 @@ class Code extends React.Component {
             <div className="container">
                 <div className="row">
                     <div className="col s12 m3">
+                        <h2 className="heading">Your Projects</h2>
+                        <label className="search-label" htmlFor="search-input">
+                            <input
+                                type="text"
+                                value=""
+                                placeholder="Search..."
+                            />
+                        </label>
                         <Projects title={this.state.name + "Projects"} />
                     </div>
-                    <code>
-                        code ands stuff
-                    </code>
+                    
                 </div>
             </div>
         )

@@ -1,11 +1,11 @@
 .boxinternal {
-    height: 108px;
+    height: 100px;
     width: 100%;
     /* position: fixed; */
     z-index: 9;
-    border-top: 8px solid #03a9f4;
+    /* border-top: 8px solid #03a9f4; */
     transition: .2s;
-    background-color: lightblue;
+    /* background-color: lightblue; */
 }
 
 .scene {
@@ -28,6 +28,11 @@
 .scene:hover .box {
     transform: rotateY(-90deg);
     cursor: pointer;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    
+    
+
 }
 
 .face {
@@ -40,15 +45,15 @@
 
 .front {
     transform: rotateY(0deg);
-    padding-top: 25px;
+    padding-top: 48px;
     transition: .2s;
-    background-color: lightblue;
+    /* background-color: lightblue; */
 }
 
 .right {
     transform: rotateY(90deg);
     left: 100%;
-    background-color: #03a9f4;
+    background-color: #c035c5;
     color: rgb(167, 216, 247);
     padding-top: 25px;
     transition: .2s;
