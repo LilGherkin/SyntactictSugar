@@ -10,6 +10,16 @@ class Code extends React.Component {
         };
     };
 
+    // componentDidMount = () => {
+    //     isAuthenticated && (
+    // }
+
+    // getUser = () => {
+    //     axios.get("/api/users").then(whoa => {
+
+    //     })
+    // }
+
     render() {
         return (
             <div className="container">

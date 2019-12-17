@@ -37,7 +37,7 @@ const Nav = () => {
                             </Link>
                         </div>
                     </div>
-                    <div className="scene">
+                    {isAuthenticated && (<div className="scene">
                         <div className="box modal-trigger" href="#modal1">
                             <div className="front face center-align" id="org">
                                 <img className="plane" src="/img/circled-user.png" />
@@ -49,7 +49,7 @@ const Nav = () => {
                                 </div>
                             </Link>
                         </div>
-                    </div>
+                    </div>)}
                     <div className="scene">
                         <div className="box center-align" href="#modal1">
                             <div className="front face center-align" id="org">
