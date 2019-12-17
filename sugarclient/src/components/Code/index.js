@@ -28,8 +28,8 @@ class Code extends React.Component {
                 <Nav />
                 <br /> <br /> <br />
                 <div className="container">
-                    <div className="row center">
-                        <div className="col s12 m3">
+                    <div className="row">
+                        <div className="col s12 m3 center">
                             <h2 className="heading">Your Projects</h2>
                             <button className="btn waves-effect waves-light purple" type="submit" name="action" onClick={this.create}>createProject</button>
                             <br /><br /><br />
