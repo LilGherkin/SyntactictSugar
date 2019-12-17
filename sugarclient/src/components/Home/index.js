@@ -3,6 +3,7 @@ import Action from "../Action";
 import Wall from "../Wall";
 import Projects from "../Projects";
 import Userpost from "../Userpost";
+import Nav from "../Nav";
 
 import {
     BrowserRouter as Router,
@@ -35,27 +36,31 @@ class Home extends React.Component {
 
     render() {
         return (
-            <div className="container">
-                <div className="row">
-                    <div className="col s12 l3">
-                        <Projects title={"coolProjects"} />
+            <>
+                <div className="cover"></div>
+                <Nav />
+                <br /> <br /> <br />
+                <div className="container">
+                    <div className="row">
+                        <div className="col s12 m3 l3">
+                            <Projects title={"recentProjects"} />
+                        </div>
+                        <div className="col s12 m9">
+                            <Wall
+                                postpost={this.postpost}
+                                postContent={this.input}
+                                buttonClass={this.state.button[this.state.btnState]}
+                            >
+                                <Userpost />
+                            </Wall>
+                        </div>
                     </div>
-                    <div className="col s12 m9">
-                        <Wall
-                            postpost={this.postpost}
-                            postContent={this.input}
-                            buttonClass={this.state.button[this.state.btnState]}
-                        // gone={}
-                        >
-                            <Userpost />
-                        </Wall>
-                    </div>
-                </div>
-                <br />
+                    {/* <br />
                 <div className="row">
                     <Action />
-                </div>
-            </div >
+                </div> */}
+                </div >
+            </>
         )
     }
 };

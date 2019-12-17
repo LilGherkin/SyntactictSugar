@@ -1,6 +1,6 @@
 .boxinternal {
     height: 100px;
-    width: 100%;
+    width: 750px;
     /* position: fixed; */
     z-index: 9;
     /* border-top: 8px solid #03a9f4; */
@@ -11,7 +11,7 @@
 .scene {
     width: 100px;
     height: 100px;
-    /* margin-left: px; */
+    margin-left: 5px;
     z-index: 10;
     float: left;
     transition: .2s;
@@ -30,9 +30,6 @@
     cursor: pointer;
     margin-top: 15px;
     margin-bottom: 15px;
-    
-    
-
 }
 
 .face {
@@ -47,7 +44,6 @@
     transform: rotateY(0deg);
     padding-top: 48px;
     transition: .2s;
-    /* background-color: lightblue; */
 }
 
 .right {
