@@ -11,7 +11,7 @@ import {
 } from "react-router-dom";
 const Nav = () => {
     // Auth0 start
-    const { isAuthenticated, loginWithRedirect, logout } = useAuth0();
+    const { user, isAuthenticated, loginWithRedirect, logout } = useAuth0();
     const { loading } = useAuth0();
     if (loading) {
         return <Loading />;
