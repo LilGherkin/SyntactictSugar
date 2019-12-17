@@ -9,16 +9,24 @@ class Code extends React.Component {
         this.state = {
             name: null,
             newContent: false,
-            content: ""
+            content: "",
+            button: "btn disabled"
         };
     };
 
     create = () => {
-        this.setState({ newContent: true })
+        this.setState({ newContent: true });
     }
 
-    input = (text) => {
-        console.log(text.target.value)
+    input = text => {
+        this.setState({ content: text.target.value });
+        text.target.value !== ""
+            ? this.setState({ button: "btn waves-effect waves-light purple" })
+            : this.setState({ button: "btn disabled" });
+    }
+
+    save = () => {
+        console.log(this.state.content);
     }
 
     render() {
@@ -45,8 +53,8 @@ class Code extends React.Component {
                         <div className="col s12 m9">
                             {this.state.newContent &&
                                 <>
-                                    <textarea id="textarea1" className="materialize-textarea" onChange={this.state.input}></textarea>
-                                    <button className="btn waves-effect waves-light purple" type="submit" name="action" onClick={this.create}>save</button>
+                                    <textarea id="textarea1" className="materialize-textarea" onChange={this.input}></textarea>
+                                    <button className={this.state.button} type="submit" name="action" onClick={this.save}>save</button>
                                 </>}
                             {!this.state.newContent && <code>what the</code>}
                         </div>
