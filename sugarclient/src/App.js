@@ -33,8 +33,6 @@ class App extends React.Component {
                 <div className="container">
                     <div className="row">
                         <h1 className="header left black-text b">{this.state.plates[this.state.name]}</h1>
-                    </div>
-                </div>
                 <Router>
                     <Nav />
                     <br /><br /><br />
@@ -43,6 +41,8 @@ class App extends React.Component {
                         <Route path="/code" exact component={Code} />
                     </Switch>
                 </Router>
+                    </div>
+                </div>
                 <br />
                 <Footer />
             </Wrapper>

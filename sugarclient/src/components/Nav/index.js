@@ -31,7 +31,7 @@ const Nav = () => {
                                 <i className="fas fa-home"></i>
                             </div>
                             <Link to="/">
-                                <div className="right face" href="/">
+                                <div className="circle right face" href="/">
                                     <p>HOME</p>
                                 </div>
                             </Link>
@@ -44,7 +44,7 @@ const Nav = () => {
                                 <i className="fas fa-home"></i>
                             </div>
                             <Link to="/code">
-                                <div className="right face center-align">
+                                <div className="circle right face center-align">
                                     <p>PROFILE</p>
                                 </div>
                             </Link>
@@ -57,10 +57,10 @@ const Nav = () => {
                                 <i className="fas fa-home"></i>
                             </div>
                             <Link to="/">
-                                {!isAuthenticated && (<div className="right face" onClick={() => loginWithRedirect({})}>
+                                {!isAuthenticated && (<div className="circle right face" onClick={() => loginWithRedirect({})}>
                                     <p>LOGIN</p>
                                 </div>)}
-                                {isAuthenticated && (<div className="right face" onClick={() => logout()}>
+                                {isAuthenticated && (<div className="circle right face" onClick={() => logout()}>
                                     <p>LOGOUT</p>
                                 </div>)}
                             </Link>
