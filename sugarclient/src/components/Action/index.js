@@ -13,7 +13,7 @@ function Action(props) {
             <h4 className="center">Stuff</h4>
             <div className="col s12 m6 l3">
                 <div className="center promo promo-example">
-                    <i className="large material-icons">things</i>
+                    <i className="small material-icons">things</i>
                     <h5 className="promo-caption">
                         <a href="#" target="blank">Link</a>
                     </h5>
@@ -21,20 +21,20 @@ function Action(props) {
             </div>
             <div className="col s12 m6 l3">
                 <div className="center promo promo-example">
-                    <i className="large material-icons">link</i>
+                    <i className="small material-icons">link</i>
                     <h5 className="promo-caption">projects</h5>
                     <p className="light center"></p>
                 </div>
             </div>
             <div className="col s12 m6 l3">
                 <div className="center promo promo-example">
-                    <i className="large material-icons">work</i>
+                    <i className="small material-icons">work</i>
                     <h5 className="promo-caption"><a href="#" target="blank">link</a></h5>
                 </div>
             </div>
             <div className="col s12 m6 l3">
                 <div className="center promo promo-example">
-                    <i className="large material-icons">stuff</i>
+                    <i className="small material-icons">stuff</i>
                     <h5 className="promo-caption"><a href="#" target="blank">link</a></h5>
                     <p className="light center"></p>
                 </div>
