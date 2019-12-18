@@ -1,6 +1,11 @@
 import React from 'react';
 import Projects from "../Projects";
+<<<<<<< HEAD
 import "./style.css";
+=======
+// import axios from "axios";
+// import { useAuth0 } from "../react-auth0-spa";
+>>>>>>> 5484a216a2d4b17fde6d34c6ddc11dd60294cced
 
 class Code extends React.Component {
     constructor(props) {
@@ -9,6 +14,16 @@ class Code extends React.Component {
             name: null
         };
     };
+
+    // componentDidMount = () => {
+    //     isAuthenticated && (
+    // }
+
+    // getUser = () => {
+    //     axios.get("/api/users").then(whoa => {
+
+    //     })
+    // }
 
     render() {
         return (
