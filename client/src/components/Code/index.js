@@ -1,7 +1,14 @@
 import React from 'react';
 import Projects from "../Projects";
+
+import "./style.css";
+
+// import axios from "axios";
+// import { useAuth0 } from "../react-auth0-spa";
+
 import Nav from "../Nav";
 import "./style.css";
+
 
 class Code extends React.Component {
     constructor(props) {
