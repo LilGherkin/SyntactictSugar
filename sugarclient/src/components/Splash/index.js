@@ -19,7 +19,7 @@ function Splash() {
                         <div className="content__container" >
                             <p class="content__container__text">
                                 enter
-                                </p>
+                            </p>
                             <ul class="content__container__list">
                                 <li class="content__container__list__item">./facePalm</li>
                                 <li class="content__container__list__item">=> facepalm</li>

@@ -5,13 +5,6 @@ import Projects from "../Projects";
 import Userpost from "../Userpost";
 import Nav from "../Nav";
 
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link
-} from "react-router-dom";
-
 class Home extends React.Component {
     constructor(props) {
         super(props);
