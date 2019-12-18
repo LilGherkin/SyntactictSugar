@@ -7,7 +7,7 @@ const mongoose = require("mongoose");
 const routes = require("./routes");
 
 app.use(morgan("dev"));
-app.use(express.static(path.join(__dirname, "sugarclient/build")));
+app.use(express.static(path.join(__dirname, "client/build")));
 app.use(express.json());// for parsing json data
 app.use(express.urlencoded({ extended: true })) // parsing form data
 
@@ -18,7 +18,7 @@ const port = process.env.SERVER_PORT || 3333;
 
 app.use(routes);
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "sugarclient", "build", "index.html"));
+  res.sendFile(path.join(__dirname, "client", "build", "index.html"));
 });
 
 // Connect to the Mongo DB
