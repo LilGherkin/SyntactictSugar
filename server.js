@@ -22,9 +22,8 @@ app.get("*", (req, res) => {
 });
 
 // Connect to the Mongo DB
-mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/user"
-);
-
+mongoose.connect('mongodb://Mark:databas3password@ds253368.mlab.com:53368/heroku_n3zsj9l9', { useNewUrlParser: true })
+  .then(() => console.log(`Database connected successfully`))
+  .catch(err => console.log(err));
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
