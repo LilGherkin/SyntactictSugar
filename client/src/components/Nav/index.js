@@ -26,7 +26,7 @@ const Nav = () => {
                                 <i className="fas fa-home"></i>
                             </div>
                             <Link to="/home">
-                                <div className="circle right face" href="/">
+                                <div className="circle right face" href="/home">
                                     <p>HOME</p>
                                 </div>
                             </Link>
