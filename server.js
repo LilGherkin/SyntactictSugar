@@ -11,19 +11,34 @@ app.use(express.static(path.join(__dirname, "client/build")));
 app.use(express.json());// for parsing json data
 app.use(express.urlencoded({ extended: true })) // parsing form data
 
-const port = process.env.SERVER_PORT || 3333;
+const port = process.env.PORT || 3333;
 // app.use((_, res) => {
 //     res.sendFile(join(__dirname, "build", "index.html"));
 // });
+
+// Connect to the Mongo DB
+mongoose.connect('mongodb://Mark:databas3password@ds253368.mlab.com:53368/heroku_n3zsj9l9', { useNewUrlParser: true })
+  .then(() => console.log(`Database connected successfully`))
+  .catch(err => console.log(err));
+
+mongoose.Promise = global.Promise;
+
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow=Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
+app.use(bodyParser.json());
 
 app.use(routes);
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "client", "build", "index.html"));
 });
 
-// Connect to the Mongo DB
-mongoose.connect('mongodb://Mark:databas3password@ds253368.mlab.com:53368/heroku_n3zsj9l9', { useNewUrlParser: true })
-  .then(() => console.log(`Database connected successfully`))
-  .catch(err => console.log(err));
+app.use((err, req, res, next) => {
+  console.logg(err);
+  next();
+});
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
