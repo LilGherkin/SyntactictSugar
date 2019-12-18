@@ -42,16 +42,16 @@ class Code extends React.Component {
     // how to get user data from the api
     loadUsers = () => {
         API.getusers()
-          .then(res =>
-            this.setState({ users: res.data})
-            //console.log(res.data)
-          )
-          
-          .catch(err => console.log(err));
-      };
-      componentDidMount() {
+            .then(res =>
+                this.setState({ users: res.data })
+                //console.log(res.data)
+            )
+
+            .catch(err => console.log(err));
+    };
+    componentDidMount() {
         this.loadUsers();
-      }
+    }
 
 
     render() {
@@ -86,24 +86,24 @@ class Code extends React.Component {
                     </div>
                     {console.log("test")}
                     {this.state.users.length ? (
-              <List>
-                  
-                {this.state.users.map(user => {
-                  return (
-                    <ListItem key={user._id}>
-                      <a href={"/users/" + user._id}>
-                        <strong>
-                          {user.username} by {user.username}
-                          {console.log("test")}
-                        </strong>
-                      </a>
-                    </ListItem>
-                  );
-                })}
-              </List>
-            ) : (
-              <h3>No Results to Display</h3>
-            )}
+                        <List>
+
+                            {this.state.users.map(user => {
+                                return (
+                                    <ListItem key={user._id}>
+                                        <a href={"/users/" + user._id}>
+                                            <strong>
+                                                {user.username} by {user.username}
+                                                {console.log("test")}
+                                            </strong>
+                                        </a>
+                                    </ListItem>
+                                );
+                            })}
+                        </List>
+                    ) : (
+                            <h3>No Results to Display</h3>
+                        )}
                 </div>
             </>
         )

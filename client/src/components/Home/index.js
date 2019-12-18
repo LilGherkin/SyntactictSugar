@@ -4,6 +4,7 @@ import Wall from "../Wall";
 import Projects from "../Projects";
 import Userpost from "../Userpost";
 import Nav from "../Nav";
+import API from "../../utils/API";
 
 class Home extends React.Component {
     constructor(props) {
@@ -13,6 +14,7 @@ class Home extends React.Component {
             postText: "",
             button: ["btn disabled", "btn waves-effect waves-light blue"],
             btnState: 0,
+            comments: []
         };
     };
 
@@ -22,10 +24,23 @@ class Home extends React.Component {
     };
 
     postpost = () => {
-        this.state.postText !== "" ? console.log(this.state.postText) : console.log("NOTHING");
+        this.state.postText !== ""
+            ? API.postComment({ comment: this.state.postText })
+            : console.log("NOTHING");
         this.setState({ postText: "" });
-        // axios.post("/post", postText);
+        this.get();
     };
+
+    componentDidMount = () => {
+        this.get();
+    };
+
+    get = () => {
+        API.getComments().then(res => {
+            this.setState({ comments: res.data.reverse() });
+            console.log(this.state.comments);
+        }).catch(err => console.log(err));
+    }
 
     render() {
         return (
@@ -43,8 +58,14 @@ class Home extends React.Component {
                                 postpost={this.postpost}
                                 postContent={this.input}
                                 buttonClass={this.state.button[this.state.btnState]}
+                            // posts={this.state.comments}
                             >
-                                <Userpost />
+                                {this.state.comments.map(post =>
+                                    <Userpost
+                                        text={post.comment}
+                                        username={post._id}
+                                    />
+                                )}
                             </Wall>
                         </div>
                     </div>
