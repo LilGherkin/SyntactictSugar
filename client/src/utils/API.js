@@ -16,5 +16,9 @@ export default {
   // Saves a user to the database
   saveuser: function(userData) {
     return axios.post("/api/users", userData);
+  },
+  // Gets all projects
+  getProjects: function() {
+    return axios.get("api/projects");
   }
 };
