@@ -1,7 +1,16 @@
 import React from 'react';
 import Projects from "../Projects";
+<<<<<<< HEAD
+<<<<<<< HEAD
+import "./style.css";
+=======
+// import axios from "axios";
+// import { useAuth0 } from "../react-auth0-spa";
+>>>>>>> 5484a216a2d4b17fde6d34c6ddc11dd60294cced
+=======
 import Nav from "../Nav";
 import "./style.css";
+>>>>>>> 6dd038944ebf39b0bbec99336b61f365c0553507
 
 class Code extends React.Component {
     constructor(props) {
