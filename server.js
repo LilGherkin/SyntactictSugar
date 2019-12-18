@@ -4,6 +4,7 @@ const morgan = require("morgan");
 const app = express();
 const path = require("path");
 const mongoose = require("mongoose");
+const bodyParser = require("body-parser");
 const routes = require("./routes");
 
 app.use(morgan("dev"));
@@ -15,6 +16,11 @@ const port = process.env.PORT || 3333;
 // app.use((_, res) => {
 //     res.sendFile(join(__dirname, "build", "index.html"));
 // });
+
+app.use(routes);
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+});
 
 // Connect to the Mongo DB
 mongoose.connect('mongodb://Mark:databas3password@ds253368.mlab.com:53368/heroku_n3zsj9l9', { useNewUrlParser: true })
@@ -30,11 +36,6 @@ app.use((req, res, next) => {
 });
 
 app.use(bodyParser.json());
-
-app.use(routes);
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "client", "build", "index.html"));
-});
 
 app.use((err, req, res, next) => {
   console.logg(err);
