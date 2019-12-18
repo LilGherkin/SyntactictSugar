@@ -43,8 +43,8 @@ class Code extends React.Component {
     loadUsers = () => {
         API.getusers()
           .then(res =>
-            this.setState({ users: res.data})
-            //console.log(res.data)
+            {this.setState({ users: res.data})
+            console.log(res.data)}
           )
           
           .catch(err => console.log(err));
