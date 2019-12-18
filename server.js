@@ -38,7 +38,7 @@ app.use((req, res, next) => {
 app.use(bodyParser.json());
 
 app.use((err, req, res, next) => {
-  console.logg(err);
+  console.log(err);
   next();
 });
 
