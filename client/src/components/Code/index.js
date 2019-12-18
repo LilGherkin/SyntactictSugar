@@ -8,6 +8,8 @@ import "./style.css";
 
 import Nav from "../Nav";
 import "./style.css";
+import API from "../../utils/API";
+import { List, ListItem } from "../../components/List";
 
 
 class Code extends React.Component {
@@ -17,7 +19,8 @@ class Code extends React.Component {
             name: null,
             newContent: false,
             content: "",
-            button: "btn disabled"
+            button: "btn disabled",
+            users: []
         };
     };
 
@@ -35,6 +38,21 @@ class Code extends React.Component {
     save = () => {
         console.log(this.state.content);
     }
+
+    // how to get user data from the api
+    loadUsers = () => {
+        API.getusers()
+          .then(res =>
+            this.setState({ users: res.data})
+            //console.log(res.data)
+          )
+          
+          .catch(err => console.log(err));
+      };
+      componentDidMount() {
+        this.loadUsers();
+      }
+
 
     render() {
         return (
@@ -66,6 +84,26 @@ class Code extends React.Component {
                             {!this.state.newContent && <code>what the</code>}
                         </div>
                     </div>
+                    {console.log("test")}
+                    {this.state.users.length ? (
+              <List>
+                  
+                {this.state.users.map(user => {
+                  return (
+                    <ListItem key={user._id}>
+                      <a href={"/users/" + user._id}>
+                        <strong>
+                          {user.username} by {user.username}
+                          {console.log("test")}
+                        </strong>
+                      </a>
+                    </ListItem>
+                  );
+                })}
+              </List>
+            ) : (
+              <h3>No Results to Display</h3>
+            )}
                 </div>
             </>
         )
