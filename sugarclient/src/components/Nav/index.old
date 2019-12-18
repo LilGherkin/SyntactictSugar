@@ -1,22 +1,31 @@
 import React from "react";
 import "./style.css";
-import { useAuth0 } from "../../react-auth0-spa";
-// import Loading from "../../components/Loading";
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link
-} from "react-router-dom";
-const Nav = () => {
-    // Auth0 start
-    const { user, isAuthenticated, loginWithRedirect, logout } = useAuth0();
-    // const { loading } = useAuth0();
-    // if (loading) {
-    //     return <Loading />;
-    // }
-    return (
-        <>
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+
+class Nav extends Component {
+    // Setting our component's initial state
+    state = {
+        books: [],
+        title: "",
+        author: "",
+        synopsis: ""
+    };
+
+    // When the component mounts, load all books and save them to this.state.books
+    componentDidMount() {
+        this.loadUsers();
+    }
+
+    // Loads all books  and sets them to this.state.books
+    loadUsers = () => {
+        API.getUsers()
+            .then(res =>
+                console.log(res)
+            )
+            .catch(err => console.log(err));
+    };
+    render() {
+        return (
             <div className="boxinternal">
                 <div className="center-align">
                     <div className="scene">
@@ -25,8 +34,8 @@ const Nav = () => {
                                 <img className="plane" src="/img/home-page-icon.png" />
                                 <i className="fas fa-home"></i>
                             </div>
-                            <Link to="/home">
-                                <div className="circle right face" href="/">
+                            <Link to="/">
+                                <div className="right face" href="/">
                                     <p>HOME</p>
                                 </div>
                             </Link>
@@ -38,11 +47,9 @@ const Nav = () => {
                                 <img className="plane" src="/img/circled-user.png" />
                                 <i className="fas fa-home"></i>
                             </div>
-                            <Link to="/code">
-                                <div className="circle right face center-align">
-                                    <p>PROFILE</p>
-                                </div>
-                            </Link>
+                            <div className="right face center-align">
+                                <p>PROFILE</p>
+                            </div>
                         </div>
                     </div>
                     <div className="scene">
@@ -51,11 +58,11 @@ const Nav = () => {
                                 <img className="plane" src="/img/login.png" />
                                 <i className="fas fa-home"></i>
                             </div>
-                            <Link to="/home">
-                                {!isAuthenticated && (<div className="circle right face" onClick={() => loginWithRedirect({})}>
+                            <Link to="/">
+                                {!isAuthenticated && (<div className="right face" onClick={() => loginWithRedirect({})}>
                                     <p>LOGIN</p>
                                 </div>)}
-                                {isAuthenticated && (<div className="circle right face" onClick={() => logout()}>
+                                {isAuthenticated && (<div className="right face" onClick={() => logout()}>
                                     <p>LOGOUT</p>
                                 </div>)}
                             </Link>
@@ -63,8 +70,9 @@ const Nav = () => {
                     </div>
                 </div>
             </div>
-        </>
-    )
+
+        );
+    }
 }
 
 export default Nav;

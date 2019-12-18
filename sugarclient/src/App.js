@@ -8,9 +8,9 @@ import './App.css';
 import {
     BrowserRouter as Router,
     Switch,
-    Route,
-    Link
+    Route
 } from "react-router-dom";
+import Splash from './components/Splash';
 
 class App extends React.Component {
     constructor(props) {
@@ -28,23 +28,17 @@ class App extends React.Component {
     render() {
         return (
             <Wrapper>
-                <div className="cover"></div>
-                <div className="container">
-                    <div className="row">
-                        <h1 className="header left black-text b">{this.state.plates[this.state.name]}</h1>
+                <h1 className="header left black-text b">{this.state.plates[this.state.name]}</h1>
                 <Router>
-                    <Nav />
-                    <br /><br /><br />
                     <Switch>
-                        <Route path="/" exact component={Home} />
+                        <Route path="/home" exact component={Home} />
                         <Route path="/code" exact component={Code} />
+                        <Route path="/" exact component={Splash} />
                     </Switch>
                 </Router>
-                    </div>
-                </div>
                 <br />
                 <Footer />
-            </Wrapper>
+            </Wrapper >
         );
     };
 };
