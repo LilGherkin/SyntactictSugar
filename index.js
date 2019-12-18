@@ -10,7 +10,7 @@ const app = express();
 const port = process.env.PORT || 5000;
 
 //connect to the database
-mongoose.connect('mongodb://Mark:database1@ds353358.mlab.com:53358/heroku_5kd1q6sn', { useNewUrlParser: true })
+mongoose.connect('mongodb://Mark:databas3password@ds253368.mlab.com:53368/heroku_n3zsj9l9', { useNewUrlParser: true })
   .then(() => console.log(`Database connected successfully`))
   .catch(err => console.log(err));
 

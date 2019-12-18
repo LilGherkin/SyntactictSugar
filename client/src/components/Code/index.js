@@ -1,5 +1,9 @@
 import React from 'react';
 import Projects from "../Projects";
+<<<<<<< HEAD:sugarclient/src/components/Code/index.js
+=======
+
+>>>>>>> 2f23964fe01e6eac24db6f22348bfb417dfe1209:client/src/components/Code/index.js
 import "./style.css";
 
 // import axios from "axios";
