@@ -1,4 +1,5 @@
 import axios from "axios";
+import Projects from "../components/Projects";
 
 export default {
   // Gets all users
@@ -18,8 +19,11 @@ export default {
     return axios.post("/api/users", userData);
   },
   // Gets all projects
-  getProjects: function () {
+  getProj: function () {
     return axios.get("api/projects");
+  },
+  postProj: function (proj) {
+    return axios.post("api/projects", proj);
   },
   getComments: function () {
     return axios.get("/api/comments");
