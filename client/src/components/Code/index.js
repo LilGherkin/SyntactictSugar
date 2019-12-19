@@ -3,10 +3,7 @@ import Projects from "../Projects";
 import Projlist from "../projlist";
 import API from "../../utils/API";
 import "./style.css";
-
-// import axios from "axios";
 // import { useAuth0 } from "../react-auth0-spa";
-
 import Nav from "../Nav";
 import "./style.css";
 import { List, ListItem } from "../../components/List";
@@ -61,13 +58,6 @@ class Code extends React.Component {
         this.loadUsers();
         this.get();
     };
-
-    // postpost = () => {
-    //     this.state.projName !== "" && this.state.content !== ""
-    //         ? API.postProj({ content: this.state.content, name: this.state.name })
-    //         : console.log("NOTHING");
-    //     this.get();
-    // };
 
     get = () => {
         API.getProj().then(res => {
