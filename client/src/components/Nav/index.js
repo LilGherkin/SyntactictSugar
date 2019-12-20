@@ -11,10 +11,10 @@ import {
 const Nav = () => {
     // Auth0 start
     const { user, isAuthenticated, loginWithRedirect, logout } = useAuth0();
-     const { loading } = useAuth0();
-     if (loading) {
-         return <Loading />;
-     }
+    const { loading } = useAuth0();
+    if (loading) {
+        return <Loading />;
+    }
     return (
         <>
             <div className="boxinternal">
@@ -61,6 +61,7 @@ const Nav = () => {
                             </Link>
                         </div>
                     </div>
+                    {console.log(user)}
                 </div>
             </div>
         </>

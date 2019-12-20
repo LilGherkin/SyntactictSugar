@@ -25,11 +25,8 @@ class Home extends React.Component {
     };
 
     postpost = () => {
-        this.state.postText !== ""
-            ? API.postComment({ comment: this.state.postText })
-            : console.log("NOTHING");
+        if (this.state.postText !== "") { API.postComment({ comment: this.state.postText }).then(() => this.get()) };
         this.setState({ postText: "" });
-        this.get();
     };
 
     componentDidMount = () => {

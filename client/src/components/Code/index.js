@@ -39,10 +39,9 @@ class Code extends React.Component {
     }
 
     save = () => {
-        this.state.projName !== "" && this.state.content !== ""
-            ? API.postProj({ content: this.state.content, name: this.state.projName })
-            : console.log("NOTHING");
-        this.get();
+        if (this.state.projName !== "" && this.state.content !== "") {
+            API.postProj({ content: this.state.content, name: this.state.projName }).then(() => this.get());
+        }
     }
 
     // how to get user data from the api
@@ -104,7 +103,7 @@ class Code extends React.Component {
                                     <br />
                                     <button className={this.state.button} type="submit" name="action" onClick={this.save}>save</button>
                                 </>}
-                            {!this.state.newContent && <code>yes it is a profile</code>}
+                            {!this.state.newContent && <code>LOG IN TO VIEW YOUR PROFILE</code>}
                         </div>
                     </div>
                     {/* {console.log("f")}
