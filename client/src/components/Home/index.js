@@ -50,10 +50,10 @@ class Home extends React.Component {
         }).catch(err => console.log(err))//.then(() => console.log(this.state.comments));
     };
 
-    selectProj = (data) => {
-        API.getProj(data.user).then(res => {
-
-            console.log(this.state.projects);
+    selectProj = (proj) => {
+        console.log(proj.id)
+        API.getCont(proj.id).then(res => {
+            console.log(res.data);
         }).catch(err => console.log(err));
     }
 
@@ -72,6 +72,7 @@ class Home extends React.Component {
                                         user={proj.user}
                                         selectProj={this.selectProj}
                                         projtitle={proj.name}
+                                        id={proj._id}
                                     />
                                 )}
                             </Projects>
