@@ -27,5 +27,11 @@ module.exports = {
             .findById({ _id: req.params.id })
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err));
+    },
+    findUser: function (req, res) {
+        db.Project
+            .find({ user: req.params.user })
+            .then(dbModel => res.json(dbModel))
+            .catch(err => res.status(422).json(err));
     }
 };

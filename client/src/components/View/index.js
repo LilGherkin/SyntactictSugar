@@ -4,7 +4,7 @@ import "./style.css";
 function View(props) {
     return (
         <>
-            <button className="btn waves-effect waves-light blue back" type="submit" name="action" onClick={() => props.clicc()}>back to wall</button>
+            <button className="btn waves-effect waves-light blue back" type="submit" name="action" onClick={() => props.clicc()}>back</button>
             <br />
             <div className="center centertitle z-depth-1">
                 <h4 className="">{props.title}</h4>

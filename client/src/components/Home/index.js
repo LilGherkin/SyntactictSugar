@@ -53,8 +53,8 @@ class Home extends React.Component {
     };
 
     selectProj = (proj) => {
-        console.log(proj)
         API.getCont(proj.id).then(res => {
+            console.log(res.data)
             this.setState({ projContent: res.data });
         }).catch(err => console.log(err));
     };
