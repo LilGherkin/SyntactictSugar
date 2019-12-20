@@ -1,5 +1,5 @@
 import React from 'react';
-import Action from "../Action";
+import Projlist from "../projlist";
 import Wall from "../Wall";
 import Projects from "../Projects";
 import Userpost from "../Userpost";
@@ -10,11 +10,12 @@ class Home extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            projects: {},
+            projects: [],
             postText: "",
             button: ["btn disabled", "btn waves-effect waves-light blue"],
             btnState: 0,
-            comments: []
+            comments: [],
+            projects: []
         };
     };
 
@@ -33,12 +34,15 @@ class Home extends React.Component {
 
     componentDidMount = () => {
         this.get();
+        API.getProj().then(res => {
+            this.setState({ projects: res.data.reverse() });
+            console.log(this.state.projects);
+        }).catch(err => console.log(err));
     };
 
     get = () => {
         API.getComments().then(res => {
             this.setState({ comments: res.data.reverse() });
-            console.log(this.state.comments);
         }).catch(err => console.log(err));
     }
 
@@ -51,7 +55,13 @@ class Home extends React.Component {
                 <div className="container">
                     <div className="row">
                         <div className="col s12 m3 l3">
-                            <Projects title={"recentProjects"} />
+                            <Projects title={"recentProjects"}>
+                                {this.state.projects.map(proj =>
+                                    <Projlist
+                                        projtitle={proj.name}
+                                    />
+                                )}
+                            </Projects>
                         </div>
                         <div className="col s12 m9">
                             <Wall

@@ -1,14 +1,11 @@
 import React from 'react';
 import Projects from "../Projects";
-
+import Projlist from "../projlist";
+import API from "../../utils/API";
 import "./style.css";
-
-// import axios from "axios";
 // import { useAuth0 } from "../react-auth0-spa";
-
 import Nav from "../Nav";
 import "./style.css";
-import API from "../../utils/API";
 import { List, ListItem } from "../../components/List";
 
 
@@ -19,8 +16,10 @@ class Code extends React.Component {
             name: null,
             newContent: false,
             content: "",
+            projName: "toot",
             button: "btn disabled",
-            users: []
+            users: [],
+            projects: []
         };
     };
 
@@ -33,10 +32,17 @@ class Code extends React.Component {
         text.target.value !== ""
             ? this.setState({ button: "btn waves-effect waves-light purple" })
             : this.setState({ button: "btn disabled" });
+    };
+
+    inputtitle = text => {
+        this.setState({ projName: text.target.value });
     }
 
     save = () => {
-        console.log(this.state.content);
+        this.state.projName !== "" && this.state.content !== ""
+            ? API.postProj({ content: this.state.content, name: this.state.projName })
+            : console.log("NOTHING");
+        this.get();
     }
 
     // how to get user data from the api
@@ -45,14 +51,20 @@ class Code extends React.Component {
             .then(res =>
                 this.setState({ users: res.data })
                 //console.log(res.data)
-            )
-
-            .catch(err => console.log(err));
+            ).catch(err => console.log(err));
     };
+
     componentDidMount() {
         this.loadUsers();
-    }
+        this.get();
+    };
 
+    get = () => {
+        API.getProj().then(res => {
+            this.setState({ projects: res.data.reverse() });
+            console.log(this.state.projects)
+        }).catch(err => console.log(err));
+    }
 
     render() {
         return (
@@ -66,25 +78,36 @@ class Code extends React.Component {
                             <h2 className="heading">Your Projects</h2>
                             <button className="btn waves-effect waves-light purple" type="submit" name="action" onClick={this.create}>createProject</button>
                             <br /><br /><br />
-                            <label className="search-label" htmlFor="search-input">
+                            {/* <label className="search-label" htmlFor="search-input">
                                 <input
                                     type="text"
                                     value=""
                                     placeholder="Search..."
                                 />
-                            </label>
-                            <Projects title={this.state.name + "Projects"} />
+                            </label> */}
+                            <Projects title={this.state.name + "Projects"}>
+                                {this.state.projects.map(proj =>
+                                    <Projlist
+                                        projtitle={proj.name}
+                                    />
+                                )}
+                            </Projects>
                         </div>
                         <div className="col s12 m9">
                             {this.state.newContent &&
                                 <>
+                                    <textarea id="textarea2" className="materialize-textarea" onChange={this.inputtitle}></textarea>
+                                    <label for="textarea2">projectTitle</label>
+                                    <br />
                                     <textarea id="textarea1" className="materialize-textarea" onChange={this.input}></textarea>
+                                    <label for="textarea1">content</label>
+                                    <br />
                                     <button className={this.state.button} type="submit" name="action" onClick={this.save}>save</button>
                                 </>}
-                            {!this.state.newContent && <code>what the</code>}
+                            {!this.state.newContent && <code>yes it is a profile</code>}
                         </div>
                     </div>
-                    {console.log("test")}
+                    {/* {console.log("f")}
                     {this.state.users.length ? (
                         <List>
 
@@ -103,7 +126,7 @@ class Code extends React.Component {
                         </List>
                     ) : (
                             <h3>No Results to Display</h3>
-                        )}
+                        )} */}
                 </div>
             </>
         )
