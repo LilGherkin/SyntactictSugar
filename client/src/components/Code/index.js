@@ -6,17 +6,16 @@ import "./style.css";
 import Nav from "../Nav";
 import "./style.css";
 import { List, ListItem } from "../../components/List";
-import Profile from '../Profile';
+import Profile from '../Profile/Profile.js';
 import Create from '../Create';
 
 class Code extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            name: null,
             newContent: false,
             content: "",
-            projName: "toot",
+            projContent: null,
             button: "btn disabled",
             users: [],
             projects: []
@@ -67,6 +66,18 @@ class Code extends React.Component {
         }).catch(err => console.log(err));
     };
 
+    selectProj = (proj) => {
+        // console.log(proj)
+        // API.getCont(proj.id).then(res => {
+        //     }
+        //     this.setState({ projContent: res.data });
+        // }).catch(err => console.log(err));
+    };
+
+    mount = (user) => {
+        console.log(user)
+    }
+
     render() {
         return (
             <>
@@ -76,7 +87,6 @@ class Code extends React.Component {
                 <div className="container">
                     <div className="row">
                         <div className="col s12 m3 center">
-                            <h2 className="heading">Your Projects</h2>
                             <button className="btn waves-effect waves-light purple" type="submit" name="action" onClick={this.create}>createProject</button>
                             <br /><br /><br />
                             {/* <label className="search-label" htmlFor="search-input">
@@ -86,24 +96,41 @@ class Code extends React.Component {
                                     placeholder="Search..."
                                 />
                             </label> */}
-                            <Projects title={this.state.name + "Projects"}>
+                            {/* <Projects title={this.state.name + "Projects"}>
                                 {this.state.projects.map(proj =>
                                     <Projlist
                                         projtitle={proj.name}
                                     />
                                 )}
+                            </Projects> */}
+
+                            <Projects title={"yourProjects"}>
+                                {this.state.projects.map(proj =>
+                                    <Projlist
+                                        user={proj.user}
+                                        selectProj={this.selectProj}
+                                        projtitle={proj.name}
+                                        id={proj._id}
+                                    />
+                                )}
                             </Projects>
                         </div>
                         <div className="col s12 m9">
-                            {this.state.newContent &&
-                                <Create
-                                    input={this.input}
-                                    inputtitle={this.inputtitle}
-                                    save={this.save}
-                                    button={this.state.button}
-                                />
-                            }
-                            {!this.state.newContent && <Profile />}
+                            <div className="center">
+                                {this.state.newContent &&
+                                    <Create
+                                        input={this.input}
+                                        inputtitle={this.inputtitle}
+                                        save={this.save}
+                                        button={this.state.button}
+                                    />
+                                }
+                                {!this.state.newContent &&
+                                    <>
+                                        <br /> <br /> <br /><br />
+                                        <Profile mount={this.mount} />
+                                    </>}
+                            </div>
                         </div>
                     </div>
                     {/* {console.log("f")}

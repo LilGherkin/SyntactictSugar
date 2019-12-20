@@ -25,6 +25,9 @@ export default {
   getCont: function (id) {
     return axios.get("api/projects/get/" + id);
   },
+  getProjUser: function (user) {
+    return axios.get("api/projects/getprojuser/" + user);
+  },
   postProj: function (proj) {
     return axios.post("api/projects", proj);
   },
