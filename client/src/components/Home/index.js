@@ -15,7 +15,8 @@ class Home extends React.Component {
             button: ["btn disabled", "btn waves-effect waves-light blue"],
             btnState: 0,
             comments: [],
-            view: true
+            view: true,
+            projContent: null
         };
     };
 
@@ -53,9 +54,11 @@ class Home extends React.Component {
     selectProj = (proj) => {
         console.log(proj.id)
         API.getCont(proj.id).then(res => {
-            console.log(res.data);
+            this.setState({ projContent: res.data });
         }).catch(err => console.log(err));
-    }
+    };
+
+    wall = () => this.setState({ projContent: null });
 
     render() {
         return (
@@ -78,7 +81,7 @@ class Home extends React.Component {
                             </Projects>
                         </div>
                         <div className="col s12 m9">
-                            {this.state.view && <Wall
+                            {!this.state.projContent && <Wall
                                 postpost={this.postpost}
                                 postContent={this.input}
                                 buttonClass={this.state.button[this.state.btnState]}
@@ -92,8 +95,9 @@ class Home extends React.Component {
                                     />
                                 )}
                             </Wall>}
-                            {!this.state.view && <>
-
+                            {this.state.projContent && <>
+                                <p>{this.state.projContent.content}</p>
+                                <button className={this.state.button[1]} type="submit" name="action" onClick={this.wall}>back to wall</button>
                             </>}
                         </div>
                     </div>
