@@ -1,0 +1,73 @@
+  header {
+    position: fixed;
+    width: 200px;
+    background-color: #99CB38;
+    height: 100%;
+    transform: translateX(-200px);
+    transition: 0.1s ease-in-out;
+  }
+  
+  #masthead.menu-open {
+          transform: translateX(0px);
+          box-shadow: 2px 0 3px rgba(0,0,0,0.25); 
+  }
+  
+  li a {
+    display: block;
+    padding: 15px 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  }
+  
+  li a:hover {
+      background-color: rgba(0, 0, 0, 0.2);
+  }
+  
+  /* HAMBUGER */
+  #hamburger {
+    width: 50px;
+    height: 50px;
+    padding: 25px 15px;
+    position: absolute;
+    top: 0;
+    right: -80px;
+    transition: 0.1s ease-in-out;
+  }
+  
+  #hamburger span, 
+  #hamburger span:before, 
+  #hamburger span:after {
+    cursor: pointer;
+    border-radius: 1px;
+    height: 4px;
+    width: 25px;
+    background: white;
+    position: absolute;
+    display: block;
+    content: '';
+    background-color: rgb(42, 84, 224);
+    transition: 0.1s ease-in-out;
+  }
+  #hamburger span:before {
+    top: -8px;
+  }
+  #hamburger span:after {
+    bottom: -8px; 
+  }
+  #hamburger span, 
+  #hamburger span:before,
+  #hamburger span:after {
+    transition: all 500ms ease-in-out;
+  }
+  #hamburger.active span {
+    background-color: transparent;
+  }
+  #hamburger.active span:before, 
+  #hamburger.active span:after {
+    top: 0;
+  }
+  #hamburger.active span:before {
+    transform: rotate(45deg);
+  }
+  #hamburger.active span:after {
+    transform: rotate(-45deg);
+  }
