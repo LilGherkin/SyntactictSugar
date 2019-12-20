@@ -15,7 +15,7 @@ class Home extends React.Component {
             button: ["btn disabled", "btn waves-effect waves-light blue"],
             btnState: 0,
             comments: [],
-            projects: []
+            view: true
         };
     };
 
@@ -24,8 +24,15 @@ class Home extends React.Component {
         text !== "" ? this.setState({ btnState: 1 }) : this.setState({ btnState: 0 });
     };
 
-    postpost = () => {
-        if (this.state.postText !== "") { API.postComment({ comment: this.state.postText }).then(() => this.get()) };
+    postpost = (user) => {
+        console.log(user)
+        if (this.state.postText !== "") {
+            API.postComment({
+                comment: this.state.postText,
+                user: user.nickname,
+                img: user.picture
+            }).then(() => this.get())
+        };
         this.setState({ postText: "" });
     };
 
@@ -40,6 +47,13 @@ class Home extends React.Component {
     get = () => {
         API.getComments().then(res => {
             this.setState({ comments: res.data.reverse() });
+        }).catch(err => console.log(err))//.then(() => console.log(this.state.comments));
+    };
+
+    selectProj = (data) => {
+        API.getProj(data.user).then(res => {
+
+            console.log(this.state.projects);
         }).catch(err => console.log(err));
     }
 
@@ -55,13 +69,15 @@ class Home extends React.Component {
                             <Projects title={"recentProjects"}>
                                 {this.state.projects.map(proj =>
                                     <Projlist
+                                        user={proj.user}
+                                        selectProj={this.selectProj}
                                         projtitle={proj.name}
                                     />
                                 )}
                             </Projects>
                         </div>
                         <div className="col s12 m9">
-                            <Wall
+                            {this.state.view && <Wall
                                 postpost={this.postpost}
                                 postContent={this.input}
                                 buttonClass={this.state.button[this.state.btnState]}
@@ -70,10 +86,14 @@ class Home extends React.Component {
                                 {this.state.comments.map(post =>
                                     <Userpost
                                         text={post.comment}
-                                        username={post._id}
+                                        username={post.user}
+                                        img={post.img}
                                     />
                                 )}
-                            </Wall>
+                            </Wall>}
+                            {!this.state.view && <>
+
+                            </>}
                         </div>
                     </div>
                     {/* <br />

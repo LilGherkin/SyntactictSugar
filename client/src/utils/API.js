@@ -22,6 +22,9 @@ export default {
   getProj: function () {
     return axios.get("api/projects");
   },
+  getCont: function (proj) {
+    return axios.get("api/projects/" + proj);
+  },
   postProj: function (proj) {
     return axios.post("api/projects", proj);
   },

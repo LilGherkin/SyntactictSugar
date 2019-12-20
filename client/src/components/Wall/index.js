@@ -1,7 +1,14 @@
 import React from "react";
 import "./style.css";
+import { useAuth0 } from "../../react-auth0-spa";
+import Loading from "../Loading";
 
 function Wall(props) {
+    const { user, isAuthenticated, loginWithRedirect, logout } = useAuth0();
+    const { loading } = useAuth0();
+    if (loading) {
+        return <Loading />;
+    }
     return (
         <>
             <div className="row center">
@@ -12,7 +19,7 @@ function Wall(props) {
                         <label for="textarea1">writeHere</label>
                     </div>
                 </div>
-                <button className={props.buttonClass} type="submit" name="action" onClick={props.postpost}>send it</button>
+                <button className={props.buttonClass} type="submit" name="action" onClick={() => props.postpost(user)}>send it</button>
             </div>
             <div className="board z-depth-2">
                 <ul className="collection">

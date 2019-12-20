@@ -32,3 +32,8 @@
 p {
   font-family: 'Courier New', Courier, monospace;
 }
+
+.circleme {
+  width: 60px;
+  height: auto;
+}

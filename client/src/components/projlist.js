@@ -3,8 +3,8 @@ import React from "react";
 function Projlist(props) {
     return (
         <tr>
-            <td><p>{props.user}</p></td>
-            <td>{props.projtitle}</td>
+            {/* <td></td>{props.user}</a></td> */}
+            <td><a href="#" id={props.projtitle} class={props.user} onClick={() => props.selectProj(props)}>{props.projtitle}</a></td>
         </tr>
     )
 }
