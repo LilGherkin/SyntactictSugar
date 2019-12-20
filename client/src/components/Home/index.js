@@ -5,6 +5,7 @@ import Projects from "../Projects";
 import Userpost from "../Userpost";
 import Nav from "../Nav";
 import API from "../../utils/API";
+import View from '../View';
 
 class Home extends React.Component {
     constructor(props) {
@@ -52,13 +53,16 @@ class Home extends React.Component {
     };
 
     selectProj = (proj) => {
-        console.log(proj.id)
+        console.log(proj)
         API.getCont(proj.id).then(res => {
             this.setState({ projContent: res.data });
         }).catch(err => console.log(err));
     };
 
-    wall = () => this.setState({ projContent: null });
+    wall = () => {
+        this.setState({ projContent: null })
+        console.log(this.state.projContent);
+    }
 
     render() {
         return (
@@ -96,8 +100,17 @@ class Home extends React.Component {
                                 )}
                             </Wall>}
                             {this.state.projContent && <>
-                                <p>{this.state.projContent.content}</p>
-                                <button className={this.state.button[1]} type="submit" name="action" onClick={this.wall}>back to wall</button>
+                                <br />
+                                <View
+                                    button={this.state.button[1]}
+                                    clicc={this.wall}
+                                    name={this.state.projContent.user}
+                                    title={this.state.projContent.name}
+                                    content={this.state.projContent.content}
+                                />
+                                {/* <button className={this.state.button[1]} type="submit" name="action" onClick={this.wall}>back to wall</button>
+                                <h4>{this.state.projContent.name} by {this.state.projContent.user}</h4>
+                                <p>{this.state.projContent.content}</p> */}
                             </>}
                         </div>
                     </div>
