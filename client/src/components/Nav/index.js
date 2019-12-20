@@ -57,6 +57,7 @@ const Nav = () => {
                                 </div>)}
                                 {isAuthenticated && (<div className="circle right face" onClick={() => logout()}>
                                     <p>LOGOUT</p>
+                                    <p>{user.given_name}</p>
                                 </div>)}
                             </Link>
                         </div>

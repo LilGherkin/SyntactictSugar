@@ -5,6 +5,7 @@ const projectSchema = new Schema({
   name: String,
   url: String,
   content: String,
+  user: String
 });
 
 const Project = mongoose.model("Projects", projectSchema);

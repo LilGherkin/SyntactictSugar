@@ -3,11 +3,11 @@ import Projects from "../Projects";
 import Projlist from "../projlist";
 import API from "../../utils/API";
 import "./style.css";
-// import { useAuth0 } from "../react-auth0-spa";
 import Nav from "../Nav";
 import "./style.css";
 import { List, ListItem } from "../../components/List";
-
+import Profile from '../Profile';
+import Create from '../Create';
 
 class Code extends React.Component {
     constructor(props) {
@@ -23,26 +23,28 @@ class Code extends React.Component {
         };
     };
 
-    create = () => {
-        this.setState({ newContent: true });
-    }
+    create = () => { this.setState({ newContent: true }); };
 
     input = text => {
-        this.setState({ content: text.target.value });
-        text.target.value !== ""
+        this.setState({ content: text });
+        text !== ""
             ? this.setState({ button: "btn waves-effect waves-light purple" })
             : this.setState({ button: "btn disabled" });
     };
 
     inputtitle = text => {
-        this.setState({ projName: text.target.value });
-    }
+        this.setState({ projName: text });
+    };
 
-    save = () => {
+    save = (user) => {
         if (this.state.projName !== "" && this.state.content !== "") {
-            API.postProj({ content: this.state.content, name: this.state.projName }).then(() => this.get());
-        }
-    }
+            API.postProj({
+                content: this.state.content,
+                name: this.state.projName,
+                user: user.nickname
+            }).then(() => this.get());
+        };
+    };
 
     // how to get user data from the api
     loadUsers = () => {
@@ -63,7 +65,7 @@ class Code extends React.Component {
             this.setState({ projects: res.data.reverse() });
             console.log(this.state.projects)
         }).catch(err => console.log(err));
-    }
+    };
 
     render() {
         return (
@@ -94,16 +96,14 @@ class Code extends React.Component {
                         </div>
                         <div className="col s12 m9">
                             {this.state.newContent &&
-                                <>
-                                    <textarea id="textarea2" className="materialize-textarea" onChange={this.inputtitle}></textarea>
-                                    <label for="textarea2">projectTitle</label>
-                                    <br />
-                                    <textarea id="textarea1" className="materialize-textarea" onChange={this.input}></textarea>
-                                    <label for="textarea1">content</label>
-                                    <br />
-                                    <button className={this.state.button} type="submit" name="action" onClick={this.save}>save</button>
-                                </>}
-                            {!this.state.newContent && <code>LOG IN TO VIEW YOUR PROFILE</code>}
+                                <Create
+                                    input={this.input}
+                                    inputtitle={this.inputtitle}
+                                    save={this.save}
+                                    button={this.state.button}
+                                />
+                            }
+                            {!this.state.newContent && <Profile />}
                         </div>
                     </div>
                     {/* {console.log("f")}

@@ -5,6 +5,7 @@ import Projects from "../Projects";
 import Userpost from "../Userpost";
 import Nav from "../Nav";
 import API from "../../utils/API";
+import View from '../View';
 
 class Home extends React.Component {
     constructor(props) {
@@ -15,7 +16,8 @@ class Home extends React.Component {
             button: ["btn disabled", "btn waves-effect waves-light blue"],
             btnState: 0,
             comments: [],
-            projects: []
+            view: true,
+            projContent: null
         };
     };
 
@@ -24,8 +26,15 @@ class Home extends React.Component {
         text !== "" ? this.setState({ btnState: 1 }) : this.setState({ btnState: 0 });
     };
 
-    postpost = () => {
-        if (this.state.postText !== "") { API.postComment({ comment: this.state.postText }).then(() => this.get()) };
+    postpost = (user) => {
+        console.log(user)
+        if (this.state.postText !== "") {
+            API.postComment({
+                comment: this.state.postText,
+                user: user.nickname,
+                img: user.picture
+            }).then(() => this.get())
+        };
         this.setState({ postText: "" });
     };
 
@@ -40,7 +49,19 @@ class Home extends React.Component {
     get = () => {
         API.getComments().then(res => {
             this.setState({ comments: res.data.reverse() });
+        }).catch(err => console.log(err))//.then(() => console.log(this.state.comments));
+    };
+
+    selectProj = (proj) => {
+        console.log(proj)
+        API.getCont(proj.id).then(res => {
+            this.setState({ projContent: res.data });
         }).catch(err => console.log(err));
+    };
+
+    wall = () => {
+        this.setState({ projContent: null })
+        console.log(this.state.projContent);
     }
 
     render() {
@@ -55,13 +76,16 @@ class Home extends React.Component {
                             <Projects title={"recentProjects"}>
                                 {this.state.projects.map(proj =>
                                     <Projlist
+                                        user={proj.user}
+                                        selectProj={this.selectProj}
                                         projtitle={proj.name}
+                                        id={proj._id}
                                     />
                                 )}
                             </Projects>
                         </div>
                         <div className="col s12 m9">
-                            <Wall
+                            {!this.state.projContent && <Wall
                                 postpost={this.postpost}
                                 postContent={this.input}
                                 buttonClass={this.state.button[this.state.btnState]}
@@ -70,10 +94,24 @@ class Home extends React.Component {
                                 {this.state.comments.map(post =>
                                     <Userpost
                                         text={post.comment}
-                                        username={post._id}
+                                        username={post.user}
+                                        img={post.img}
                                     />
                                 )}
-                            </Wall>
+                            </Wall>}
+                            {this.state.projContent && <>
+                                <br />
+                                <View
+                                    button={this.state.button[1]}
+                                    clicc={this.wall}
+                                    name={this.state.projContent.user}
+                                    title={this.state.projContent.name}
+                                    content={this.state.projContent.content}
+                                />
+                                {/* <button className={this.state.button[1]} type="submit" name="action" onClick={this.wall}>back to wall</button>
+                                <h4>{this.state.projContent.name} by {this.state.projContent.user}</h4>
+                                <p>{this.state.projContent.content}</p> */}
+                            </>}
                         </div>
                     </div>
                     {/* <br />

@@ -2,7 +2,9 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
-  comment: String
+  comment: String,
+  user: String,
+  img: String
 });
 
 const Comment = mongoose.model("Comments", userSchema);
